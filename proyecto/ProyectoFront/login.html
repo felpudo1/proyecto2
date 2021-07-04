@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <!-- Carga de fuentes de Font  Awesome -->
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+        <!-- Carga de estilos css personalizados -->
+        <link rel="stylesheet" href="css/LoginCss.css">
+         <!-- icono de la webpage  --> 
+         <link rel="icon" type="image/ico" href="images/favicon.ico" />
+
+        <style> </style>
+    </head>
+        <body>
+            <main>
+                <h1>Login</h1>
+          
+                <form method="POST" action="javascript:void(0);"> 
+                  <!-- le decimos q no haga nada la otra forma podria ser un submit para enviar directmaente con la ruta -->
+                  <!-- ca lo va a consumir desde el scrip del js   -->
+                  <input id="mail" type="email" name="mail" placeholder="Ingrese su correo">
+                  <input id="password" type="password" name="password" placeholder="Ingrese su contraseña">
+                  
+                  <button id="login">LOGIN</button>
+                  <a class="login-link" href="register.html">usuario nuevo? REGISTRESE</a>
+                  <a class="login-link" href="index.html">Volver a inicio</a>
+                
+                </form>
+                
+              </main>
+            
+            <!-- <script src="js/login.js"></script> -->
+             <script>
+
+
+const button = document.getElementById('login'); 
+const mailElement = document.getElementById('mail');
+const passwordElement = document.getElementById('password');
+
+button.addEventListener('click', () => {
+  const mail = mailElement.value;
+  const password = passwordElement.value;
+  if (mail && password) { //validamos que no sea vacio abajo hay un menshaje
+ 
+    const objetoBody = {    //declaramos este obj para pasarselo en el post
+      mail: mail,           //podriamos hacerlo directo en el body del post
+      password: password,
+      fecha: '24/06/2021'
+    };
+      // body: JSON.stringify(   ///ejemplo amndado del objeto directo en el body
+      //   {  mail: mail,
+      //      password: password,
+      //   };
+      // )
+   
+    //siempre q quieramos hacer una req al back. sea leer o mandar
+    fetch('http://localhost:3005/auth/login', {   //1er parametro ruta del endpoint no solo server
+      method: "POST",  //seg parametro metodo en este caso post
+      headers: {           //aca hacemos lo q haciamos en postman 
+        "Content-Type": "application/json"    //ABAJO SE HIZO CON UN EJEMplo con get
+      },                                      
+      body: JSON.stringify(objetoBody)  //stringy fx recibe un obj y lo conv en string
+      
+    })
+    .then(function(response) { // te devuelve de a partes la respuesta
+      return response.json();  //x eso convertimos a json la respuesta
+    })
+    .then(function(response) {
+      
+
+      if (!response.error) {   //validamos el login. si el error es null esta ok
+
+        localStorage.setItem('token', response.token);  //guardamos el token en un localst
+       
+        alert('Login exitoso');
+        window.location.href = "manager.html";
+      }else {
+        alert('Login fallido');  //si el erro es null falido
+        window.location.href = "login.html";
+
+      }
+    })
+
+  }
+  else {
+    alert('Falta completar campos')
+  }
+
+});
+
+             </script>
+ 
+    </body>
+</html>

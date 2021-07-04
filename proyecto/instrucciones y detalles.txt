@@ -1,0 +1,40 @@
+correr en el servidor 
+npm run serve
+la documentacion se adjunta a este archivo
+
+se incluye archivo de postman para pruebas.
+corre en el puerto 3005
+
+ping pong 3005
+post registro
+post login
+get listado usuarios hecho x user logeado
+get listado usuarios hecho x user no logeado
+get listado articlos
+post ingreso articulos
+ 
+
+detalles.
+
+inicia la app con la pantalla institucional.
+en la parte artuclos carga 3 articulos ya guardados.
+
+para agragar artculos ir a login.  
+
+
+si se es nuevo 
+ir a registro. 
+
+si se tiene user
+ir a login e ingresar datos.
+el unico ingreso operativo desde la app es ingresar articulos
+
+
+
+
+
+en la parte de contacto envia mail.
+se uso https://ethereal.email/messages para testear.
+
+
+

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+       
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <!-- Carga de fuentes de Font  Awesome -->
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+        <!-- Carga de estilos css personalizados -->
+        <link rel="stylesheet" href="css/estilos.css">
+         <!-- icono de la webpage  --> 
+         <link rel="icon" type="image/ico" href="images/favicon.ico" />
+
+        
+        <!--<link rel="stylesheet" href="css/blocks.css"> -->
+        <style>
+
+        </style>
+    </head>
+    <body>
+        <section class="bienvenidosIngresos">
+            <header class="encabezado">
+                <nav class="navbar navbar-light navbar-fixed-top">
+                    <div class="container">
+                        <button class="navbar-toggler hidden-md-up float-xs-right" type="button" data-toggle="collapse" data-target="#menuprincipal">
+</button>
+                        <a class="navbar-brand" href="#">IMPORTADORA TELSITUR</a>
+                        <div class="collapse navbar-toggleable-sm float-md-right" id="menuprincipal">
+                            <ul class="nav navbar-nav">
+                                <li class="nav-item active">
+                                    <a class="nav-link " href="index.html">HOME</a>
+                                </li>
+                                <li class="nav-item ">
+                                    <a class="nav-link disabled esconder" href="#">Conózcanos</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link disabled esconder" href="#">Productos</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="manager.html">Volver</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="index.html">Log out</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </header>
+            <div>
+</div>
+            <section>
+                <div class="container"> 
+                    <div class="row"> 
+                        <div class="col-lg-6 pg"> 
+                            <!-- incluie id al form -->
+                            <form id= "formulario" action="javascript:void(0);">
+                                <div>
+                                    
+                                    <h4>ID</h4>
+                                    <input id="txtId" type="text" name="id" placeholder="ID">
+                                </div>
+                                <div>
+                                    <h4>Nombre</h4>
+                                    <input id="txtNombre" type="text" name="nombre" placeholder="Nombre" autofocus>                                    
+                                </div>
+                                <div> 
+                                    <h4>Descripcion</h4> 
+                                    <input id="txtDescripcion" type="text" name="Descripción" placeholder="Descripción">
+                                </div>                                 
+                                <div> 
+                                    <h4>Categoria</h4> 
+                                    <select name="categoria" id="SelCategoria">
+                                        <option value="" disabled selected>ferreteria</option>
+                                        <option value="ferreteria">ferreteria</option>
+                                        <option value="sanitaria">sanitaria</option>
+                                        <option value="electricidad">electricidad</option>
+                                    </select>
+                                </div>                                 
+                                <div> 
+                                    <h4>imagen</h4>
+                                    <input id="txtImagen" type="text" name="imagen" placeholder="Imagen">
+                                    <div> 
+                                        <h4>Precio</h4> 
+                                        <input id="txtPrecio" type="number" name="precio" placeholder="Precio">
+                                    </div>                                     
+                                    <div> 
+                                        <h4>Stock</h4> 
+                                        <input id="txtStock" type="number" name="stock" placeholder="Stock">
+                                    </div>                                     
+                                    <div> 
+                                        <h4>Estado</h4> 
+                                        <input id="txtEstado" type="text" name="estado" placeholder="Estado" value="Ingresado" disabled>
+                                    </div>                                     
+                                    <br><button id="agregar">Agregar!</button>
+                                </div>
+                            </form><br>
+                        </div>    
+                                          
+                        <div id= "divArticulos"class="col-lg-6 " >
+                            
+                            <article id="listaArticulos" class = "recuadro">
+                                <button disabled id="confirmar">Confirmar!</button>&nbsp&nbsp
+                                <button disabled id="eliminar" >Descartar!</button> 
+</article>                             
+                        </div>                         
+                    </div>                     
+                </div>
+            </section>
+        </section>
+        <footer class="footer   py-2 text-xs-center">
+            <div class="container">
+                <p>2021 © Design by JPS DESIGN Todos los derechos reservados</p>
+            </div>
+        </footer>
+        <script src="https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js"></script> <!--da error si no se incluye -->
+        <script src="js/jquery.min.js"></script>         
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/mainProduct.js"></script>
+
+        <script>
+
+            const botAgregar = document.getElementById('agregar');
+            const idElement = document.getElementById('txtId');
+            const nameElement = document.getElementById('txtNombre');
+            const descripcionElement = document.getElementById('txtDescripcion');
+            const categoriaElement = document.getElementById('SelCategoria');
+            const imagenElement = document.getElementById('txtImagen');
+            const precioElement = document.getElementById('txtPrecio');
+            const stockElement = document.getElementById('txtStock');
+            const estadoElement = document.getElementById('txtEstado');
+            
+            botAgregar.addEventListener('click', () => {   
+
+          
+            const id= idElement.value
+            const name = nameElement.value
+            const descripcion = descripcionElement.value 
+            const categoria = categoriaElement.value 
+            const imagen = imagenElement.value 
+            const precio = precioElement.value 
+            const stock = stockElement.value 
+            const estado = estadoElement.value 
+             
+            if (name && id && descripcion) {
+             
+                const objetoBody = {    //declaramos este obj para pasarselo en el post
+                  id: id,
+                  nombre:name,
+                  descripcion: descripcion,           //podriamos hacerlo directo en el body del post
+                  categoria: categoria,
+                  imagen: imagen,
+                  precio: precio,
+                  stock: stock,
+                  estado: estado                  
+                };
+                 //cons.log(objetoBody);
+                //siempre q quieramos hacer una req al back. sea leer o mandar
+                fetch('http://localhost:3005/auth/ingresarArticulo', {   //1er parametro ruta del endpoint no solo server
+                  method: "POST",  //seg parametro metodo en este caso post
+                  headers: {           //aca hacemos lo q haciamos en postman 
+                    "Content-Type": "application/json"    //ABAJO SE HIZO CON UN EJEMplo con get
+                  },                                      
+                  body: JSON.stringify(objetoBody)  //stringy fx recibe un obj y lo conv en string
+                                   })
+                .then(function(response) { // te devuelve de a partes la respuesta
+                  return response.json();  //x eso convertimos a json la respuesta
+                })
+                .then(function(response)  
+                 
+                 {
+                  if (!response.error) {   //validamos el login. si el error es null esta ok
+                    alert('Registro exitoso');
+
+                    }else if (response.error){ 
+                    alert('ingreso fallido');  //si el erro es null falido
+                  }
+                }) 
+            }
+                    else {
+                        alert('Falta completar campos');
+                        window.location.href = "addProduct.html";
+                    }            
+            
+            });
+                         </script>
+    </body>
+</html>

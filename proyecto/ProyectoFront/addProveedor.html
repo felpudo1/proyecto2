@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+     
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <!-- Carga de fuentes de Font  Awesome -->
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+        <!-- Carga de estilos css personalizados -->
+        <link rel="stylesheet" href="css/estilos.css">
+         <!-- icono de la webpage  --> 
+         <link rel="icon" type="image/ico" href="images/favicon.ico" />
+
+        
+        <!--<link rel="stylesheet" href="css/blocks.css"> -->
+        <style>
+          
+
+        </style>
+    </head>
+    <body>
+        <section class="bienvenidosIngresos">
+            <header class="encabezado">
+                <nav class="navbar navbar-light navbar-fixed-top">
+                    <div class="container">
+                        <button class="navbar-toggler hidden-md-up float-xs-right" type="button" data-toggle="collapse" data-target="#menuprincipal">
+</button>
+                        <a class="navbar-brand" href="#">IMPORTADORA TELSITUR</a>
+                        <div class="collapse navbar-toggleable-sm float-md-right" id="menuprincipal">
+                            <ul class="nav navbar-nav">
+                                <li class="nav-item active">
+                                    <a class="nav-link " href="index.html">HOME</a>
+                                </li>
+                                <li class="nav-item ">
+                                    <a class="nav-link disabled esconder" href="#">Conózcanos</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link disabled esconder" href="#">Productos</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="manager.html">Volver</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="index.html">Log out</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </header>
+            <div>
+</div>
+            <section>
+                <div class="container"> 
+                    <div class="row"> 
+                        <div class="col-lg-6 pg"> 
+                            <form action="javascript:void(0);">
+                                <div>
+                                    
+                                    <h4>RUT</h4>
+                                    <input id="txtRut" type="text" name="nut" placeholder="RUT">
+                                </div>
+                                <div>
+                                    <h4>Nombre</h4>
+                                    <input id="txtNombre" type="text" name="nombre" placeholder="Nombre" autofocus>                                    
+                                </div>
+                                <div> 
+                                    <h4>Otros</h4> 
+                                    <input id="txtOtros" type="" name="otros" placeholder="otros">
+                                </div>                                 
+                                <div> 
+                                    <div> 
+                                        <h4>Contacto</h4> 
+                                        <input id="txtContacto" type="text" name="Contacto" placeholder="Contacto">
+                                    </div>
+                                </div>                                 
+                                <div> 
+                                    <h4>Direccion</h4>
+                                    <input id="txtDireccion" type="text" name="direccion" placeholder="direccion">
+                                    <div> 
+                                        <h4>Numero</h4> 
+                                        <input id="txtNumDireccion" type="text" name="numDireccion" placeholder="numeracion">
+                                    </div>                                     
+                                    <div> 
+                                        <h4>Telefono</h4> 
+                                        <input id="txtTelefono" type="text" name="telefono" placeholder="telefono">
+                                    </div>                                     
+                                    <div> 
+                                        <h4>Estado</h4> 
+                                        <input id="txtEstado" type="text" name="estado" placeholder="Estado" value="Ingresado" disabled>
+                                    </div>                                     
+                                    <br><button id="agregar">Agregar!</button>
+                                </div>
+                            </form><br>
+                        </div>    
+                                          
+                        <div id= "divProveedores"class="col-lg-6 " > 
+                           
+                            <article id="listaProveedores" class = "recuadro">
+                                <button disabled id="confirmar">Confirmar!</button>&nbsp&nbsp
+                                <button disabled id="eliminar" >Descartar!</button> 
+                            </article>                             
+                        </div>                         
+                    </div>                     
+                </div>
+            </section>
+        </section>
+        <footer class="footer   py-2 text-xs-center">
+            <div class="container">
+                <p>2021 © Design by JPS DESIGN Todos los derechos reservados</p>
+            </div>
+        </footer> 
+        <script src="https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js"></script> <!--da error si no se incluye -->
+        <script src="js/jquery.min.js"></script>         
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/mainProveedor.js"></script>
+    </body>
+</html>

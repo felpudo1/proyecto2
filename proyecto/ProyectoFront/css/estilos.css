@@ -1,0 +1,238 @@
+html {
+  font-size: 15px; }
+
+/*Style bienvenidos*/
+.bienvenidos {
+  background: url("../images/fondo-bienvenidos.jpg");
+  background-size: cover;
+  height: 100vh;   /*ver cambios */
+  overflow: hidden;
+  padding-top: 130px; 
+}  
+
+.bienvenidosIngresos {
+  background: url("../images/fondo-bienvenidos.jpg");
+  background-size: cover;
+  
+  overflow: hidden;
+  padding-top: 130px; 
+}   
+
+
+.navbar-fixed-top {
+  background: rgba(0, 0, 0, 0.75); }
+  .navbar-fixed-top {
+    background:#F05F40; 
+  }
+
+.navbar-light .navbar-brand {
+  color: #fdfdfd;
+  font-size: 1.3rem;
+  text-transform: uppercase; 
+}
+
+ .navbar-light .navbar-brand:focus, .navbar-light .navbar-brand:hover {
+  color: rgba(255, 255, 255, 0.98); 
+}  
+
+.navbar-toggler {
+  font-size: 1.6rem;
+  color: #fff !important; 
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: white;
+  text-align: center;
+  padding: .4rem;
+  text-transform: uppercase; 
+}
+
+ .navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link:hover {
+  color: white;
+  background: #F05F40; 
+} 
+
+#menuprincipal {
+  clear: both; }
+
+.texto-bienvenido {
+  color: black;
+  margin-top: 8rem; }     
+ 
+
+.btn-primary {
+  background-color: #F05F40;
+  border-color: #b93e24;
+  -webkit-transition: all .5s ease;
+          transition: all .5s ease;
+  text-transform: uppercase; 
+  width: 400px !important;
+}
+
+.btn-primary:hover {
+  color: #fff;
+  background-color: #fd7355;
+  border-color: #F05F40; 
+}
+/*fin Style bienvenidos*/
+
+/*Style Conozcanos*/
+.conozcanos {
+  background: #F05F40;
+  color: #fff; 
+  padding: 60px;
+  
+}
+
+/*Style contacto*/
+.contacto {
+  color: #F05F40;
+  padding: 60px;
+  
+  }
+
+.contacto .fa {
+  color: #F05F40;
+  font-size: 6rem;
+
+  }
+
+.contacto h3 {
+  font-weight: bold; }
+
+/*Style productos*/
+.productos {
+  background: #424141;
+  color: #fff; 
+  padding: 60px;
+ 
+}
+
+.productos a {
+  display: block;
+  overflow: hidden;
+  margin-bottom: 1.5rem; }
+      
+
+/**Estilos Pie de pagina*/
+.footer {
+  color: #fff;
+  background: #222222;
+  padding: 50px; }
+
+/**fin Estilos Pie de pagina*/
+
+/**Estilos complemento*/  
+ .disabled {
+    color: black;      
+    pointer-events: none;
+    cursor: default;
+    }
+   
+ .esconder {
+      color: #F05F40  !important; 
+      background: #424141;     
+      padding: 50px;   
+      }
+
+      /*tamaño de los txt cuado se ingresan prod / clientes / proveedoes etc*/
+      form input {
+    width: 400px !important;
+  }
+
+      /*recuadro de presentacion luego del ingreso*/
+      .linea{
+        background-color: white;
+        border: black 1px solid; 
+        margin-bottom: 10px; 
+ }
+
+/*formato para presentacion de datos luego del ingreso*/
+ .recuadro div{
+  background-color: white;
+  border: black 1px solid;
+  padding: 5px;
+  margin: 15px;
+  width: auto;
+  height: auto;
+}
+
+
+
+
+
+
+
+/*MEDIAS QUERIES*/
+@media (min-width: 768px) 
+{
+  html {
+    font-size: 16px; }
+
+  #menuprincipal {
+    clear: inherit; }
+
+  .bienvenidos {
+      background-size: cover;  
+      padding-top: 180px;
+     }     
+     
+}
+
+
+
+
+/* --------------------------------------------------------------
+# button wpp
+-------------------------------------------------------------- */
+img.btn-whatsapp {
+display: block !important;
+position: fixed;
+z-index: 9999999;   /* hace como tridemensional y lo superpone */
+bottom: 20px;
+right: 20px;
+cursor: pointer;
+border-radius:100px !important;
+}
+img.btn-whatsapp:hover{   /* efecto cuando se para emcima*/
+border-radius:100px !important;
+-webkit-box-shadow: 0px 0px 15px 0px rgba(7,94,84,1); 
+-moz-box-shadow: 0px 0px 15px 0px rgba(7,94,84,1);
+box-shadow: 0px 0px 15px 0px rgba(7,94,84,1);
+transition-duration: 1s;
+} 
+
+/* --------------------------------------------------------------
+# Back to top button  (test sin jquery)
+-------------------------------------------------------------- */
+.back-to-top {
+    position: fixed;
+    visibility: hidden;
+    opacity: 0;
+    right: 15px;
+    bottom: 15px;
+    z-index: 996;
+    background: #149ddd;
+    width: 60px;
+    height: 60px;
+    border-radius: 50px;
+    transition: all 0.4s;
+}
+
+.back-to-top i {
+    font-size: 28px;
+    color: #fff;
+    line-height: 0;
+}
+
+.back-to-top:hover {
+    background: #2eafec;
+    color: #fff;
+}
+
+.back-to-top.active {
+    visibility: visible;
+    opacity: 1;
+}
+
+
